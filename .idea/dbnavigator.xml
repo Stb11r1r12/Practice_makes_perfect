@@ -20,11 +20,7 @@
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="ba3d351c-735b-44bd-a06f-ededce6d75b5" object-ref="schemas/finance_control/tables/categories" />
-      <object connection-id="ba3d351c-735b-44bd-a06f-ededce6d75b5" object-ref="schemas/finance_control/tables/user" />
-      <object connection-id="ba3d351c-735b-44bd-a06f-ededce6d75b5" object-ref="schemas/finance_control/tables/transactions" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="ba3d351c-735b-44bd-a06f-ededce6d75b5" dataset="finance_control.budget" active-filter-id="EMPTY_FILTER" />
@@ -32,6 +28,9 @@
     <filter-actions connection-id="ba3d351c-735b-44bd-a06f-ededce6d75b5" dataset="finance_control.user" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="ba3d351c-735b-44bd-a06f-ededce6d75b5" dataset="finance_control.transactions" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="ba3d351c-735b-44bd-a06f-ededce6d75b5" dataset="finance_control.categories" active-filter-id="EMPTY_FILTER" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
