@@ -7,13 +7,14 @@ import com.example.demo.entities.User;
 import com.example.demo.services.CategoryService;
 import com.example.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/categories")
 public class CategoryController {
@@ -24,12 +25,51 @@ public class CategoryController {
     }
 
     @GetMapping
-    public List<CategoriesDto> showCategoriesList() {
-        List<Categories> categories = service.listAll();
-        List<CategoriesDto> categoriesDto = new ArrayList<>();
-        for(Categories category : categories){
-            categoriesDto.add(new CategoriesDto(category));
+    //@RequestMapping(method = RequestMethod.GET)
+    public ResponseEntity<List<CategoriesDto>> showCategoryList(){
+        List<Categories> listCategories = service.listAll();
+        List<CategoriesDto> listDTO = new ArrayList<CategoriesDto>();
+        for(Categories category : listCategories){
+            listDTO.add(new CategoriesDto(category));
         }
-        return categoriesDto;
+        return new ResponseEntity<>(listDTO, HttpStatus.OK);
+    }
+    //   @GetMapping("/find/{id}")
+//   public UserDto getBuildingById(@PathVariable("id") Long id) {
+//      return new UserDto(service.get(id));
+//   }
+    @GetMapping("/find/{id}")
+    public ResponseEntity<CategoriesDto> getCategoryById(@PathVariable("id") Long id) {
+        Categories category = service.get(id);
+        return new ResponseEntity<>(new CategoriesDto(category), HttpStatus.OK);
+    }
+    @PostMapping("/create")
+    //@RequestMapping(method = RequestMethod.POST,path ="/create")
+    public ResponseEntity<CategoriesDto> createCategory(@RequestBody Categories category) {
+        service.save(category);
+        return new ResponseEntity<>(new CategoriesDto(category), HttpStatus.CREATED);
+    }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<HttpStatus> updateCategory(@RequestBody Categories category) {
+        service.save(category);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<HttpStatus> deleteUser(@PathVariable("id") Long id) {
+        try {
+            service.delete(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @DeleteMapping("/deleteAll")
+    public ResponseEntity<HttpStatus> deleteAllCategories() {
+        try {
+            service.deleteAll();
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }
