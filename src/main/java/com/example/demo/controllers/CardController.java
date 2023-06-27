@@ -2,14 +2,16 @@ package com.example.demo.controllers;
 
 import com.example.demo.dto.BudgetDto;
 import com.example.demo.dto.CardsDto;
+import com.example.demo.dto.UserDto;
 import com.example.demo.entities.Budget;
 import com.example.demo.entities.Cards;
+import com.example.demo.entities.User;
 import com.example.demo.services.BudgetService;
 import com.example.demo.services.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,12 +25,49 @@ public class CardController {
     }
 
     @GetMapping
-    public List<CardsDto> showBudgetList() {
-        List<Cards> cards = service.listAll();
-        List<CardsDto> cardsDto = new ArrayList<>();
-        for(Cards card : cards){
-            cardsDto.add(new CardsDto(card));
+    public ResponseEntity<List<CardsDto>> showCardsList(){
+        List<Cards> listCards = service.listAll();
+        List<CardsDto> listDTO = new ArrayList<CardsDto>();
+        for(Cards card : listCards){
+            listDTO.add(new CardsDto(card));
         }
-        return cardsDto;
+        return new ResponseEntity<>(listDTO, HttpStatus.OK);
+    }
+    //   @GetMapping("/find/{id}")
+//   public UserDto getBuildingById(@PathVariable("id") Long id) {
+//      return new UserDto(service.get(id));
+//   }
+    @GetMapping("/find/{id}")
+    public ResponseEntity<CardsDto> getCardById(@PathVariable("id") Long id) {
+        Cards card = service.get(id);
+        return new ResponseEntity<>(new CardsDto(card), HttpStatus.OK);
+    }
+    @PostMapping("/create")
+    public ResponseEntity<CardsDto> createCard(@RequestBody Cards card) {
+        service.save(card);
+        return new ResponseEntity<>(new CardsDto(card), HttpStatus.CREATED);
+    }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<HttpStatus> updateCard(@RequestBody Cards card) {
+        service.save(card);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<HttpStatus> deleteCard(@PathVariable("id") Long id) {
+        try {
+            service.delete(id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @DeleteMapping("/deleteAll")
+    public ResponseEntity<HttpStatus> deleteAllCards() {
+        try {
+            service.deleteAll();
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }

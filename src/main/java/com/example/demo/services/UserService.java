@@ -1,12 +1,14 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.User;
-import com.example.demo.exceptions.UserNotFoundException;
+import com.example.demo.exceptions.NotFoundException;
+import com.example.demo.exceptions.ResourceNotFoundException;
 import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -25,19 +27,28 @@ public class UserService {
         repo.save(user);
     }
 
-    public User get(Long id) throws UserNotFoundException {
+//    public User get(Long id)  {
+//        return repo.findById(id).orElseThrow(
+//                () -> new ResourceNotFoundException("Product with id " + id + " not found")
+//        );
+//    }
+    public User get(Long id) {
         Optional<User> result = repo.findById(id);
         if (result.isPresent()) {
             return result.get();
         }
-        throw new UserNotFoundException("Could not find any users with ID " + id);
+        throw new NoSuchElementException("Could not find any users with ID " + id);
     }
-
-    public void delete(Long id) throws UserNotFoundException {
+    public void delete(Long id){
         Long count = repo.countById(id);
-        if (count == null || count == 0) {
-            throw new UserNotFoundException("Could not find any users with ID " + id);
+        if(count == null || count == 0){
+            throw new NoSuchElementException("No such element");
         }
         repo.deleteById(id);
     }
+
+    public void deleteAll(){
+        repo.deleteAll();
+    }
+
 }
