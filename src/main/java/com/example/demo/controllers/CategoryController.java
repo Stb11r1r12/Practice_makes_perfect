@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/categories")
 public class CategoryController {
@@ -25,7 +24,6 @@ public class CategoryController {
     }
 
     @GetMapping
-    //@RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<CategoriesDto>> showCategoryList(){
         List<Categories> listCategories = service.listAll();
         List<CategoriesDto> listDTO = new ArrayList<CategoriesDto>();
@@ -44,7 +42,6 @@ public class CategoryController {
         return new ResponseEntity<>(new CategoriesDto(category), HttpStatus.OK);
     }
     @PostMapping("/create")
-    //@RequestMapping(method = RequestMethod.POST,path ="/create")
     public ResponseEntity<CategoriesDto> createCategory(@RequestBody Categories category) {
         service.save(category);
         return new ResponseEntity<>(new CategoriesDto(category), HttpStatus.CREATED);

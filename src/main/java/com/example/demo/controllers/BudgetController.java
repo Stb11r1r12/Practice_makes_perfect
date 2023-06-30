@@ -31,10 +31,10 @@ public class BudgetController {
         }
         return new ResponseEntity<>(listDTO, HttpStatus.OK);
     }
-//      @GetMapping("/find/{id}")
-//      public UserDto getBuildingById(@PathVariable("id") Long id) {
-//        return new UserDto(service.get(id));
-//      }
+    //   @GetMapping("/find/{id}")
+//   public UserDto getBuildingById(@PathVariable("id") Long id) {
+//      return new UserDto(service.get(id));
+//   }
     @GetMapping("/find/{id}")
     public ResponseEntity<BudgetDto> getBudgetById(@PathVariable("id") Long id) {
         Budget budget = service.get(id);
