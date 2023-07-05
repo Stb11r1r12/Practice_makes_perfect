@@ -22,7 +22,6 @@ public class Goals {
     @Column(name="current_amount")
     private int currentAmount;
 
-    public Goals(){}
 
     public Long getGoalID() {
         return id;

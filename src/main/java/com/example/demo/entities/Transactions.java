@@ -26,9 +26,6 @@ public class Transactions {
     private int amount;
     @Column(name="date")
     private Date date;
-    public Transactions() {
-
-    }
 
     public Long gettransactionId() {
         return id;

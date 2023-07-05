@@ -11,9 +11,7 @@ public class Categories {
     private String name;
     @Column(name="type")
     private boolean type;
-    public Categories(){
 
-    }
     public Long getcategoryId() {
         return id;
     }
@@ -23,8 +21,8 @@ public class Categories {
     public String getName() {
         return name;
     }
-    public void setType(boolean Type) {
-        this.type = Type;
+    public void setType(boolean type) {
+        this.type = type;
     }
     public boolean getType() {
         return type;

@@ -20,7 +20,6 @@ public class Notifications {
     private String message;
     @Column(name="date")
     private Date date;
-    public Notifications(){}
 
     public Long getnotificationId() {
         return id;
