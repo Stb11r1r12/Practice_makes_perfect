@@ -30,11 +30,11 @@ public class Transactions {
 
     }
 
-    public Long getTransaction_ID() {
+    public Long gettransactionId() {
         return id;
     }
-    public void setUserId(User user_ID) {
-        this.userId = user_ID;
+    public void setUserId(User userId) {
+        this.userId = userId;
     }
     public User getUserId() {
         return userId;

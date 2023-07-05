@@ -15,11 +15,11 @@ import java.util.Optional;
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(false)
-public class UserRepositoryTests {
+class UserRepositoryTests {
     @Autowired
     private UserRepository repo;
     @Test
-    public void testAddNew(){
+     void testAddNew(){
         User user = new User();
         user.setEmail("bububu");
         user.setUsername("oioioi");
@@ -27,10 +27,10 @@ public class UserRepositoryTests {
         User savedUser = repo.save(user);
 
         Assertions.assertThat(savedUser).isNotNull();
-        Assertions.assertThat(savedUser.getUser_ID()).isGreaterThan(0);
+        Assertions.assertThat(savedUser.getuserId()).isPositive();
     }
     @Test
-    public void testListAll() {
+     void testListAll() {
         Iterable<User> users = repo.findAll();
         Assertions.assertThat(users).hasSizeGreaterThan(0);
 
@@ -40,7 +40,7 @@ public class UserRepositoryTests {
     }
 
     @Test
-    public void testUpdate() {
+     void testUpdate() {
         Long user_ID = 5L;
         Optional<User> optionalUser = repo.findById(user_ID);
         User user = optionalUser.get();
@@ -52,7 +52,7 @@ public class UserRepositoryTests {
     }
 
     @Test
-    public void testGet() {
+     void testGet() {
         Long userId = 5L;
         Optional<User> optionalUser = repo.findById(userId);
         Assertions.assertThat(optionalUser).isPresent();
@@ -60,7 +60,7 @@ public class UserRepositoryTests {
     }
 
     @Test
-    public void testDelete() {
+     void testDelete() {
         Long userId = 4L;
         repo.deleteById(userId);
 

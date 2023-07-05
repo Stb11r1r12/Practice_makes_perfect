@@ -10,8 +10,8 @@ public class NotificationDto {
     private String message;
     private Date date;
     public NotificationDto(Notifications notification) {
-        this.id = notification.getNotification_ID();
-        this.userId = notification.getUserId().getUser_ID();
+        this.id = notification.getnotificationId();
+        this.userId = notification.getUserId().getuserId();
         this.message = notification.getName();
         this.date = notification.getDate();
     }

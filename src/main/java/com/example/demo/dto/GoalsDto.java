@@ -9,8 +9,8 @@ public class GoalsDto {
     private int targetAmount;
     private int currentAmount;
     public GoalsDto(Goals goal){
-        this.id = goal.getGoal_ID();
-        this.userId = goal.getUser_ID().getUser_ID();
+        this.id = goal.getGoalID();
+        this.userId = goal.getuserId().getuserId();
         this.name = goal.getName();
         this.targetAmount = goal.getTargetAmount();
         this.currentAmount = goal.getCurrentAmount();

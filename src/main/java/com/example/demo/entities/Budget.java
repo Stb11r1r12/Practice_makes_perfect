@@ -22,11 +22,11 @@ public class Budget {
     @Column(name="amount")
     private int amount;
 
-    public Long getBudget_ID() {
+    public Long getbudgetId() {
         return id;
     }
-    public void setUserId(User user_ID) {
-        this.userId = user_ID;
+    public void setUserId(User userId) {
+        this.userId = userId;
     }
     public User getUserId() {
         return userId;

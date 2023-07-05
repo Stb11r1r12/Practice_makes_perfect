@@ -14,7 +14,7 @@ public class Goals {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_ID", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private User user_ID;
+    private User userId;
     @Column(name="name")
     private String name;
     @Column(name="target_amount")
@@ -24,12 +24,12 @@ public class Goals {
 
     public Goals(){}
 
-    public Long getGoal_ID() {
+    public Long getGoalID() {
         return id;
     }
 
-    public User getUser_ID() {
-        return user_ID;
+    public User getuserId() {
+        return userId;
     }
     public void setName(String name) {
         this.name = name;

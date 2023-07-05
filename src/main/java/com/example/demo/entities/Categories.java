@@ -14,7 +14,7 @@ public class Categories {
     public Categories(){
 
     }
-    public Long getCategory_ID() {
+    public Long getcategoryId() {
         return id;
     }
     public void setName(String name) {

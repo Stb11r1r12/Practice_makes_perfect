@@ -9,7 +9,7 @@ public class UserDto {
     private String password;
 
     public UserDto(User user) {
-        this.id = user.getUser_ID();
+        this.id = user.getuserId();
         this.username = user.getUsername();
         this.email = user.getEmail();
         this.password = user.getPassword();

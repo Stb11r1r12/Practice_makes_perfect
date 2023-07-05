@@ -7,7 +7,7 @@ public class CategoriesDto {
     private String name;
     private boolean type;
     public CategoriesDto(Categories categories){
-        this.id = categories.getCategory_ID();
+        this.id = categories.getcategoryId();
         this.name = categories.getName();
         this.type = categories.getType();
     }

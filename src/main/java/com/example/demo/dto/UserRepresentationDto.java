@@ -7,7 +7,7 @@ public class UserRepresentationDto {
     private String username;
     private String email;
     public UserRepresentationDto(User user) {
-        this.id = user.getUser_ID();
+        this.id = user.getuserId();
         this.username = user.getUsername();
         this.email = user.getEmail();
     }

@@ -8,9 +8,9 @@ public class BudgetDto {
     private long categoryId;
     private int amount;
     public BudgetDto(Budget budget) {
-        this.id = budget.getBudget_ID();
-        this.userId = budget.getUserId().getUser_ID();
-        this.categoryId = budget.getCategoriesId().getCategory_ID();
+        this.id = budget.getbudgetId();
+        this.userId = budget.getUserId().getuserId();
+        this.categoryId = budget.getCategoriesId().getcategoryId();
         this.amount = budget.getAmount();
     }
 

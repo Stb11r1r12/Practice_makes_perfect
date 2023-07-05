@@ -4,5 +4,5 @@ import com.example.demo.entities.Categories;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CategoriesRepository extends CrudRepository<Categories, Long> {
-    public Long countById(Long category_ID);
+    public Long countById(Long categoryId);
 }

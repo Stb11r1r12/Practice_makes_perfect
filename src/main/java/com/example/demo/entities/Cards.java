@@ -19,17 +19,14 @@ public class Cards {
     private String bankName;
     @Column(name="amount")
     private int amount;
-    public Long getCard_ID() {
+    public Long getcardId() {
         return id;
-    }
-    public void setUserId(User user_ID) {
-        this.userId = user_ID;
     }
     public User getUserId() {
         return userId;
     }
-    public void setName(String bank_name) {
-        this.bankName = bank_name;
+    public void setName(String bankName) {
+        this.bankName = bankName;
     }
     public String getName() {
         return bankName;

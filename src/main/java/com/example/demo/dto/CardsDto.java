@@ -8,8 +8,8 @@ public class CardsDto {
     private String bankName;
     private int amount;
     public CardsDto(Cards cards) {
-        this.id = cards.getCard_ID();
-        this.userId = cards.getUserId().getUser_ID();
+        this.id = cards.getcardId();
+        this.userId = cards.getUserId().getuserId();
         this.bankName = cards.getName();
         this.amount = cards.getAmount();
     }

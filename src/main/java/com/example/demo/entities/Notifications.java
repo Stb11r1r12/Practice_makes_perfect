@@ -22,11 +22,11 @@ public class Notifications {
     private Date date;
     public Notifications(){}
 
-    public Long getNotification_ID() {
+    public Long getnotificationId() {
         return id;
     }
-    public void setUserId(User user_ID) {
-        this.userId = user_ID;
+    public void setUserId(User userId) {
+        this.userId = userId;
     }
     public User getUserId() {
         return userId;

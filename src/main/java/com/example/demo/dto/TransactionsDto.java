@@ -11,9 +11,9 @@ public class TransactionsDto {
     private int amount;
     private Date date;
     public TransactionsDto(Transactions transactions){
-        this.id = transactions.getTransaction_ID();
-        this.userId = transactions.getUserId().getUser_ID();
-        this.categoryId = transactions.getCategoriesId().getCategory_ID();
+        this.id = transactions.gettransactionId();
+        this.userId = transactions.getUserId().getuserId();
+        this.categoryId = transactions.getCategoriesId().getcategoryId();
         this.amount = transactions.getAmount();
         this.date = transactions.getDate();
     }
