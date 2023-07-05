@@ -23,15 +23,11 @@ public class Goals {
     private int currentAmount;
 
     public Goals(){}
-    public void setGoal_ID(Long goalId) {
-        this.id = goalId;
-    }
+
     public Long getGoal_ID() {
         return id;
     }
-    public void setUser_ID(User user_ID) {
-        this.user_ID = user_ID;
-    }
+
     public User getUser_ID() {
         return user_ID;
     }
@@ -41,15 +37,11 @@ public class Goals {
     public String getName() {
         return name;
     }
-    public void setTargetAmount(int target_amount) {
-        this.targetAmount = target_amount;
-    }
+
     public int getTargetAmount() {
         return targetAmount;
     }
-    public void setCurrentAmount(int current_amount) {
-        this.currentAmount = current_amount;
-    }
+
     public int getCurrentAmount() {
         return currentAmount;
     }

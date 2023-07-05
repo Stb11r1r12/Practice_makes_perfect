@@ -19,9 +19,6 @@ public class Cards {
     private String bankName;
     @Column(name="amount")
     private int amount;
-    public void setCard_ID(Long cardId) {
-        this.id = cardId;
-    }
     public Long getCard_ID() {
         return id;
     }
@@ -37,10 +34,6 @@ public class Cards {
     public String getName() {
         return bankName;
     }
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
     public int getAmount() {
         return amount;
     }

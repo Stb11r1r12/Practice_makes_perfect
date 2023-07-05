@@ -29,9 +29,7 @@ public class Transactions {
     public Transactions() {
 
     }
-    public void setTransaction_ID(Long transactionId) {
-        this.id = transactionId;
-    }
+
     public Long getTransaction_ID() {
         return id;
     }
@@ -41,23 +39,17 @@ public class Transactions {
     public User getUserId() {
         return userId;
     }
-    public void setCategoriesId(Categories categories_ID) {
-        this.categoriesId = categories_ID;
-    }
+
     public Categories getCategoriesId() {
         return categoriesId;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
+
 
     public int getAmount() {
         return amount;
     }
-    public void setDate(Date date) {
-        this.date = date;
-    }
+
 
     public Date getDate() {
         return date;

@@ -21,9 +21,7 @@ public class Notifications {
     @Column(name="date")
     private Date date;
     public Notifications(){}
-    public void setNotification_ID(Long notificationId) {
-        this.id = notificationId;
-    }
+
     public Long getNotification_ID() {
         return id;
     }
@@ -39,9 +37,7 @@ public class Notifications {
     public String getName() {
         return message;
     }
-    public void setDate(Date date) {
-        this.date = date;
-    }
+
     public Date getDate() {
         return date;
     }

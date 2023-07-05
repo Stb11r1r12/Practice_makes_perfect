@@ -14,9 +14,6 @@ public class Categories {
     public Categories(){
 
     }
-    public void setCategory_ID(Long categoryId) {
-        this.id = categoryId;
-    }
     public Long getCategory_ID() {
         return id;
     }

@@ -21,10 +21,7 @@ public class Budget {
     private Categories categoriesId;
     @Column(name="amount")
     private int amount;
-    public Budget(){}
-    public void setBudget_ID(Long budgetId) {
-        this.id = budgetId;
-    }
+
     public Long getBudget_ID() {
         return id;
     }
@@ -34,14 +31,8 @@ public class Budget {
     public User getUserId() {
         return userId;
     }
-    public void setCategoriesId(Categories categories_ID) {
-        this.categoriesId = categories_ID;
-    }
     public Categories getCategoriesId() {
         return categoriesId;
-    }
-    public void setAmount(int amount) {
-        this.amount = amount;
     }
     public int getAmount() {
         return amount;
