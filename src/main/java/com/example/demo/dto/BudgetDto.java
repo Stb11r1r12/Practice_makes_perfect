@@ -10,7 +10,7 @@ public class BudgetDto {
     public BudgetDto(Budget budget) {
         this.id = budget.getBudget_ID();
         this.userId = budget.getUserId().getUser_ID();
-        this.categoryId = budget.getCategories_ID().getCategory_ID();
+        this.categoryId = budget.getCategoriesId().getCategory_ID();
         this.amount = budget.getAmount();
     }
 

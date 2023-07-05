@@ -18,7 +18,7 @@ public class Budget {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "category_ID", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Categories categories_ID;
+    private Categories categoriesId;
     @Column(name="amount")
     private int amount;
     public Budget(){}
@@ -34,11 +34,11 @@ public class Budget {
     public User getUserId() {
         return userId;
     }
-    public void setCategories_ID(Categories categories_ID) {
-        this.categories_ID = categories_ID;
+    public void setCategoriesId(Categories categories_ID) {
+        this.categoriesId = categories_ID;
     }
-    public Categories getCategories_ID() {
-        return categories_ID;
+    public Categories getCategoriesId() {
+        return categoriesId;
     }
     public void setAmount(int amount) {
         this.amount = amount;
