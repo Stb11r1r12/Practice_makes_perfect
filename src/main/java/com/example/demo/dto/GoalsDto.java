@@ -4,16 +4,16 @@ import com.example.demo.entities.Goals;
 
 public class GoalsDto {
     private long id;
-    private long user_ID;
+    private long userId;
     private String name;
-    private int target_amount;
-    private int current_amount;
+    private int targetAmount;
+    private int currentAmount;
     public GoalsDto(Goals goal){
         this.id = goal.getGoal_ID();
-        this.user_ID = goal.getUser_ID().getUser_ID();
+        this.userId = goal.getUser_ID().getUser_ID();
         this.name = goal.getName();
-        this.target_amount = goal.getTarget_amount();
-        this.current_amount = goal.getCurrent_amount();
+        this.targetAmount = goal.getTargetAmount();
+        this.currentAmount = goal.getCurrentAmount();
     }
 
     public long getId() {
@@ -24,12 +24,12 @@ public class GoalsDto {
         this.id = id;
     }
 
-    public long getUser_ID() {
-        return user_ID;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUser_ID(long user_ID) {
-        this.user_ID = user_ID;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getName() {
@@ -40,19 +40,19 @@ public class GoalsDto {
         this.name = name;
     }
 
-    public int getTarget_amount() {
-        return target_amount;
+    public int getTargetAmount() {
+        return targetAmount;
     }
 
-    public void setTarget_amount(int target_amount) {
-        this.target_amount = target_amount;
+    public void setTargetAmount(int targetAmount) {
+        this.targetAmount = targetAmount;
     }
 
-    public int getCurrent_amount() {
-        return current_amount;
+    public int getCurrentAmount() {
+        return currentAmount;
     }
 
-    public void setCurrent_amount(int current_amount) {
-        this.current_amount = current_amount;
+    public void setCurrentAmount(int currentAmount) {
+        this.currentAmount = currentAmount;
     }
 }

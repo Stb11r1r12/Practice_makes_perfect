@@ -15,12 +15,12 @@ public class Transactions {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_ID", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private User user_ID;
+    private User userId;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "category_ID", nullable = false)
     //@Column(name="category_ID")
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Categories categories_ID;
+    private Categories categoriesId;
 
     @Column(name="amount")
     private int amount;
@@ -35,17 +35,17 @@ public class Transactions {
     public Long getTransaction_ID() {
         return id;
     }
-    public void setUser_ID(User user_ID) {
-        this.user_ID = user_ID;
+    public void setUserId(User user_ID) {
+        this.userId = user_ID;
     }
-    public User getUser_ID() {
-        return user_ID;
+    public User getUserId() {
+        return userId;
     }
-    public void setCategories_ID(Categories categories_ID) {
-        this.categories_ID = categories_ID;
+    public void setCategoriesId(Categories categories_ID) {
+        this.categoriesId = categories_ID;
     }
-    public Categories getCategories_ID() {
-        return categories_ID;
+    public Categories getCategoriesId() {
+        return categoriesId;
     }
 
     public void setAmount(int amount) {

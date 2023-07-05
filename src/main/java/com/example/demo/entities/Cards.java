@@ -14,9 +14,9 @@ public class Cards {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_ID", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private User user_ID;
+    private User userId;
     @Column(name="bank_name")
-    private String bank_name;
+    private String bankName;
     @Column(name="amount")
     private int amount;
     public void setCard_ID(Long cardId) {
@@ -25,17 +25,17 @@ public class Cards {
     public Long getCard_ID() {
         return id;
     }
-    public void setUser_ID(User user_ID) {
-        this.user_ID = user_ID;
+    public void setUserId(User user_ID) {
+        this.userId = user_ID;
     }
-    public User getUser_ID() {
-        return user_ID;
+    public User getUserId() {
+        return userId;
     }
     public void setName(String bank_name) {
-        this.bank_name = bank_name;
+        this.bankName = bank_name;
     }
     public String getName() {
-        return bank_name;
+        return bankName;
     }
     public void setAmount(int amount) {
         this.amount = amount;

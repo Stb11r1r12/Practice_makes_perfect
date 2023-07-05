@@ -15,7 +15,7 @@ public class Notifications {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_ID", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private User user_ID;
+    private User userId;
     @Column(name="message")
     private String message;
     @Column(name="date")
@@ -27,11 +27,11 @@ public class Notifications {
     public Long getNotification_ID() {
         return id;
     }
-    public void setUser_ID(User user_ID) {
-        this.user_ID = user_ID;
+    public void setUserId(User user_ID) {
+        this.userId = user_ID;
     }
-    public User getUser_ID() {
-        return user_ID;
+    public User getUserId() {
+        return userId;
     }
     public void setName(String message) {
         this.message = message;

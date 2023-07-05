@@ -4,13 +4,13 @@ import com.example.demo.entities.Cards;
 
 public class CardsDto {
     private long id;
-    private long user_ID;
-    private String bank_name;
+    private long userId;
+    private String bankName;
     private int amount;
     public CardsDto(Cards cards) {
         this.id = cards.getCard_ID();
-        this.user_ID = cards.getUser_ID().getUser_ID();
-        this.bank_name = cards.getName();
+        this.userId = cards.getUserId().getUser_ID();
+        this.bankName = cards.getName();
         this.amount = cards.getAmount();
     }
 
@@ -22,20 +22,20 @@ public class CardsDto {
         this.id = id;
     }
 
-    public long getUser_ID() {
-        return user_ID;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUser_ID(long user_ID) {
-        this.user_ID = user_ID;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
-    public String getBank_name() {
-        return bank_name;
+    public String getBankName() {
+        return bankName;
     }
 
-    public void setBank_name(String bank_name) {
-        this.bank_name = bank_name;
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
     }
 
     public int getAmount() {

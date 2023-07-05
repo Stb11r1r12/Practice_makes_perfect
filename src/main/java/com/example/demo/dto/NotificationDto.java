@@ -6,12 +6,12 @@ import java.util.Date;
 
 public class NotificationDto {
     private long id;
-    private long user_ID;
+    private long userId;
     private String message;
     private Date date;
     public NotificationDto(Notifications notification) {
         this.id = notification.getNotification_ID();
-        this.user_ID = notification.getUser_ID().getUser_ID();
+        this.userId = notification.getUserId().getUser_ID();
         this.message = notification.getName();
         this.date = notification.getDate();
     }
@@ -24,12 +24,12 @@ public class NotificationDto {
         this.id = id;
     }
 
-    public long getUser_ID() {
-        return user_ID;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUser_ID(long user_ID) {
-        this.user_ID = user_ID;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getMessage() {

@@ -18,9 +18,9 @@ public class Goals {
     @Column(name="name")
     private String name;
     @Column(name="target_amount")
-    private int target_amount;
+    private int targetAmount;
     @Column(name="current_amount")
-    private int current_amount;
+    private int currentAmount;
 
     public Goals(){}
     public void setGoal_ID(Long goalId) {
@@ -41,16 +41,16 @@ public class Goals {
     public String getName() {
         return name;
     }
-    public void setTarget_amount(int target_amount) {
-        this.target_amount = target_amount;
+    public void setTargetAmount(int target_amount) {
+        this.targetAmount = target_amount;
     }
-    public int getTarget_amount() {
-        return target_amount;
+    public int getTargetAmount() {
+        return targetAmount;
     }
-    public void setCurrent_amount(int current_amount) {
-        this.current_amount = current_amount;
+    public void setCurrentAmount(int current_amount) {
+        this.currentAmount = current_amount;
     }
-    public int getCurrent_amount() {
-        return current_amount;
+    public int getCurrentAmount() {
+        return currentAmount;
     }
 }

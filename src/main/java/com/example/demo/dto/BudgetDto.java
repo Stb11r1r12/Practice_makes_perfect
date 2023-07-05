@@ -4,13 +4,13 @@ import com.example.demo.entities.Budget;
 
 public class BudgetDto {
     private long id;
-    private long user_id;
-    private long category_id;
+    private long userId;
+    private long categoryId;
     private int amount;
     public BudgetDto(Budget budget) {
         this.id = budget.getBudget_ID();
-        this.user_id = budget.getUser_ID().getUser_ID();
-        this.category_id = budget.getCategories_ID().getCategory_ID();
+        this.userId = budget.getUserId().getUser_ID();
+        this.categoryId = budget.getCategories_ID().getCategory_ID();
         this.amount = budget.getAmount();
     }
 
@@ -22,20 +22,20 @@ public class BudgetDto {
         this.id = id;
     }
 
-    public long getUser_id() {
-        return user_id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUser_id(long user_id) {
-        this.user_id = user_id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
-    public long getCategory_id() {
-        return category_id;
+    public long getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategory_id(long category_id) {
-        this.category_id = category_id;
+    public void setCategoryId(long categoryId) {
+        this.categoryId = categoryId;
     }
 
     public int getAmount() {
