@@ -1,12 +1,7 @@
 package com.example.demo.controllers;
 
-import com.example.demo.dto.BudgetDto;
 import com.example.demo.dto.CardsDto;
-import com.example.demo.dto.UserDto;
-import com.example.demo.entities.Budget;
 import com.example.demo.entities.Cards;
-import com.example.demo.entities.User;
-import com.example.demo.services.BudgetService;
 import com.example.demo.services.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,10 +28,7 @@ public class CardController {
         }
         return new ResponseEntity<>(listDTO, HttpStatus.OK);
     }
-    //   @GetMapping("/find/{id}")
-//   public UserDto getBuildingById(@PathVariable("id") Long id) {
-//      return new UserDto(service.get(id));
-//   }
+
     @GetMapping("/find/{id}")
     public ResponseEntity<CardsDto> getCardById(@PathVariable("id") Long id) {
         Cards card = service.get(id);

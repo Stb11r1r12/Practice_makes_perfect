@@ -1,7 +1,6 @@
 package com.example.demo.dto;
 
 import com.example.demo.entities.Budget;
-import com.example.demo.entities.User;
 
 public class BudgetDto {
     private long id;

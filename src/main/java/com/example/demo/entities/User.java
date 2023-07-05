@@ -1,6 +1,6 @@
 package com.example.demo.entities;
 
-import com.example.demo.dto.UserDto;
+
 import jakarta.persistence.*;
 
 @Entity

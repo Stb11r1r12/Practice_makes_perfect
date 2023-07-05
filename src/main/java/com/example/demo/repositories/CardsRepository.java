@@ -1,6 +1,5 @@
 package com.example.demo.repositories;
 
-import com.example.demo.entities.Budget;
 import com.example.demo.entities.Cards;
 import org.springframework.data.repository.CrudRepository;
 

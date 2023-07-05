@@ -1,11 +1,8 @@
 package com.example.demo.controllers;
 
 import com.example.demo.dto.CategoriesDto;
-import com.example.demo.dto.UserDto;
 import com.example.demo.entities.Categories;
-import com.example.demo.entities.User;
 import com.example.demo.services.CategoryService;
-import com.example.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +22,6 @@ public class CategoryController {
     }
 
     @GetMapping
-    //@RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<CategoriesDto>> showCategoryList(){
         List<Categories> listCategories = service.listAll();
         List<CategoriesDto> listDTO = new ArrayList<CategoriesDto>();
@@ -34,10 +30,7 @@ public class CategoryController {
         }
         return new ResponseEntity<>(listDTO, HttpStatus.OK);
     }
-    //   @GetMapping("/find/{id}")
-//   public UserDto getBuildingById(@PathVariable("id") Long id) {
-//      return new UserDto(service.get(id));
-//   }
+
     @GetMapping("/find/{id}")
     public ResponseEntity<CategoriesDto> getCategoryById(@PathVariable("id") Long id) {
         Categories category = service.get(id);

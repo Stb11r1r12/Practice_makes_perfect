@@ -1,9 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.dto.BudgetDto;
-import com.example.demo.dto.UserDto;
 import com.example.demo.entities.Budget;
-import com.example.demo.entities.User;
 import com.example.demo.services.BudgetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,10 +29,7 @@ public class BudgetController {
         }
         return new ResponseEntity<>(listDTO, HttpStatus.OK);
     }
-    //   @GetMapping("/find/{id}")
-//   public UserDto getBuildingById(@PathVariable("id") Long id) {
-//      return new UserDto(service.get(id));
-//   }
+
     @GetMapping("/find/{id}")
     public ResponseEntity<BudgetDto> getBudgetById(@PathVariable("id") Long id) {
         Budget budget = service.get(id);

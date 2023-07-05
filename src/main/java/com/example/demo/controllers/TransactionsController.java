@@ -1,9 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.dto.TransactionsDto;
-import com.example.demo.dto.UserDto;
 import com.example.demo.entities.Transactions;
-import com.example.demo.entities.User;
 import com.example.demo.services.TransactionsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,10 +29,7 @@ public class TransactionsController {
         }
         return new ResponseEntity<>(listDTO, HttpStatus.OK);
     }
-    //   @GetMapping("/find/{id}")
-//   public UserDto getBuildingById(@PathVariable("id") Long id) {
-//      return new UserDto(service.get(id));
-//   }
+
     @GetMapping("/find/{id}")
     public ResponseEntity<TransactionsDto> getTransactionById(@PathVariable("id") Long id) {
         Transactions transaction = service.get(id);

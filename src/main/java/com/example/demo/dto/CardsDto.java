@@ -1,7 +1,6 @@
 package com.example.demo.dto;
 
 import com.example.demo.entities.Cards;
-import com.example.demo.entities.User;
 
 public class CardsDto {
     private long id;

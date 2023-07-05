@@ -1,8 +1,6 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.User;
-import com.example.demo.exceptions.NotFoundException;
-import com.example.demo.exceptions.ResourceNotFoundException;
 import com.example.demo.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,11 +25,6 @@ public class UserService {
         repo.save(user);
     }
 
-//    public User get(Long id)  {
-//        return repo.findById(id).orElseThrow(
-//                () -> new ResourceNotFoundException("Product with id " + id + " not found")
-//        );
-//    }
     public User get(Long id) {
         Optional<User> result = repo.findById(id);
         if (result.isPresent()) {
