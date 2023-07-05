@@ -25,7 +25,6 @@ public class CategoryService {
     public void save(Categories user) {
         repo.save(user);
     }
-
     public Categories get(Long id) {
         Optional<Categories> result = repo.findById(id);
         if (result.isPresent()) {

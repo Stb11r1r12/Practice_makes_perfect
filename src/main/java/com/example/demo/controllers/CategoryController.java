@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/categories")
 public class CategoryController {
@@ -24,6 +25,7 @@ public class CategoryController {
     }
 
     @GetMapping
+    //@RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<CategoriesDto>> showCategoryList(){
         List<Categories> listCategories = service.listAll();
         List<CategoriesDto> listDTO = new ArrayList<CategoriesDto>();
@@ -47,8 +49,12 @@ public class CategoryController {
         return new ResponseEntity<>(new CategoriesDto(category), HttpStatus.CREATED);
     }
     @PutMapping("/update/{id}")
-    public ResponseEntity<HttpStatus> updateCategory(@RequestBody Categories category) {
-        service.save(category);
+    public ResponseEntity<HttpStatus> updateCategory(@PathVariable("id") Long id,@RequestBody Categories category) {
+        Categories cat = service.get(id);
+        //cat.setCategory_ID(category.getCategory_ID());
+        cat.setName(category.getName());
+        cat.setType(category.getType());
+        service.save(cat);
         return new ResponseEntity<>(HttpStatus.OK);
     }
     @DeleteMapping("/delete/{id}")
